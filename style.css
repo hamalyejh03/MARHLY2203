@@ -6,7 +6,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    color: white;
+    color: pink;
 }
 
 .container {
@@ -24,48 +24,62 @@ body {
     padding: 20px;
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
-
-button {
-    margin-top: 25px;
-    padding: 15px 25px;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 30px;
-    background: #ff4d6d;
-    color: white;
-    cursor: pointer;
-    animation: pulse 1.5s infinite;
-}
-
-button:hover {
-    background: #ff1e50;
-}
-
 .hidden {
     display: none;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
+h1 {
+    font-size: 2.3rem;
+    margin-bottom: 25px;
 }
 
-/* 💕 Hearts */
+button {
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+.no {
+    background: #555;
+    color: white;
+    position: relative;
+}
+
+.yesText {
+    font-size: 3rem;
+}
+
+/* 💖 Hearts */
 .heart {
     position: absolute;
-    color: #ff4d6d;
     font-size: 20px;
+    color: #ff4d6d;
     animation: float 4s linear infinite;
+}
+.restart {
+    margin-top: 30px;
+    padding: 12px 22px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: none;
+    background: #ffffff;
+    color: #ff4d6d;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease; /* ← ajout */
 }
 
 @keyframes float {
@@ -78,3 +92,4 @@ button:hover {
         opacity: 0;
     }
 }
+
