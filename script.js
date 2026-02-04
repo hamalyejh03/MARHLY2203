@@ -4,24 +4,54 @@
  */
 function start() {
     document.getElementById("intro").classList.add("hidden");
-    document.getElementById("love").classList.remove("hidden");
-
-    setInterval(createHeart, 300);
+    document.getElementById("question").classList.remove("hidden");
 }
 
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
+// 💔 Bouton NON impossible à cliquer
+const noBtn = document.getElementById("noBtn");
 
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.bottom = "-20px";
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
 
-    document.body.appendChild(heart);
+function moveButton() {
+    const x = Math.random() * (window.innerWidth - 150);
+    const y = Math.random() * (window.innerHeight - 150);
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+// ❤️ Bouton OUI
+function yes() {
+    document.getElementById("question").classList.add("hidden");
+    document.getElementById("yesPage").classList.remove("hidden");
+
+    setInterval(createEmoji, 250);
+}
+
+function createEmoji() {
+    const emojis = ["❤️", "💖", "💕", "💘", "🔥"]; // Liste des emojis possibles
+    const emoji = document.createElement("div");
+    emoji.classList.add("heart"); // On garde la classe heart pour l'animation
+    emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)]; // Choix aléatoire
+
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.bottom = "-20px";
+    emoji.style.fontSize = (20 + Math.random() * 30) + "px";
+
+    document.body.appendChild(emoji);
 
     setTimeout(() => {
-        heart.remove();
+        emoji.remove();
     }, 4000);
 }
 
+function restart() {
+    document.getElementById("yesPage").classList.add("hidden");
+    document.getElementById("intro").classList.remove("hidden");
+
+    // Nettoyage des cœurs
+    document.querySelectorAll(".heart").forEach(h => h.remove());
+}
 
