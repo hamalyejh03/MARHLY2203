@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pour Toi ❤️</title>
+    <title>Valentine 💖</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ÉTAPE 1 -->
 <div class="container" id="intro">
-    <h1>Hey Maëvah… 💕</h1>
-    <p>J’ai quelque chose à te montrer</p>
-    <button onclick="start()">Clique ici 💖</button>
+    <h1>Bienvenue, Maëvah. Une question t’attend. <br> Es-tu prête ? 💕</h1>
+    <button onclick="start()">C’est parti 💖</button>
 </div>
 
-<div class="container hidden" id="love">
-    <h1>Je t’aime ❤️</h1>
-    <p>
-        Ce petit site, je l’ai codé pour toi.<br>
-        Parce que tu comptes énormément pour moi.<br><br>
-        Merci d’être toi, Mama 💫
-    </p>
+<!-- ÉTAPE 2 -->
+<div class="container hidden" id="question">
+    <h1>Veux-tu être ma valentine le 22 Mars Dieu voulant? 💘</h1>
+
+    <div class="buttons">
+        <button class="yes" onclick="yes()">Oui ❤️</button>
+        <button class="no" id="noBtn">Non 💔</button>
+    </div>
+    <h2>Le bouton « Non », trop timide, refuse de se laisser toucher. 💘</h2>
+</div>
+
+<!-- ÉTAPE 3 -->
+<div class="container hidden" id="yesPage">
+    <h1 class="yesText">Yesssss!😁 <br> On se verra le 22 Mars. <br> Je t'aime Aphro ❤</h1>
+     <button class="restart" onclick="restart()">Recommencer 🔄</button>
 </div>
 
 <script src="script.js"></script>
